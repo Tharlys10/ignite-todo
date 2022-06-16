@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: -1.5rem;
+}
+
+.boxNewTask {
+  display: flex;
+
+  gap: 0.25rem;
+}
+
+.boxNewTask input {
+  width: 40rem;
+  height: 3rem;
+  border-radius: 8px;
+  border: solid var(--gray-700) 1px;
+  background: var(--gray-500);
+  color: var(--white);
+  padding: 0 0.5rem;
+}
+
+.boxNewTask button[type="submit"] {
+  background: var(--blue-dark);
+  color: var(--white);
+  width: 6rem;
+  border-radius: 8px;
+  border: 0;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
+}
+
+.boxNewTask button[type="submit"]:hover {
+  background: var(--blue);
+}
+
+.boxNewTask button[type=submit]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.boxListTasks {
+  margin-top: 2rem;
+  width: 46rem;
+}
+
+.boxListTasks header {
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: bold;
+}
+
+.totalTasksCreated {
+  color: var(--blue);
+}
+
+.totalTasksCreated span {
+  color: var(--white);
+  background: var(--gray-400);
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.totalTasksConcluded {
+  color: var(--purple);
+}
+
+.totalTasksConcluded span {
+  color: var(--white);
+  background: var(--gray-400);
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.listNotFound {
+  width: 46rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  margin-top: 1rem;
+
+  border-top: 1px solid var(--gray-300);
+  border-radius: 8px 8px 0px 0px;
+}
