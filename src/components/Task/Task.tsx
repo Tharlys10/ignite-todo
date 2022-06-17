@@ -1,36 +1,60 @@
 import { Trash } from 'phosphor-react';
 import styles from './Task.module.css';
 
-type TaskProps = {
+type TaskType = {
+  id: string;
+  title: string;
   concluded: boolean;
+  created_at: Date;
+  updated_at: Date;
 }
 
-export function Task({ concluded = false }: TaskProps) {
+type TaskProps = {
+  task: TaskType;
+  onDeleteTask: (id: string) => void;
+  onConcludeTask: (id: string) => void;
+}
+
+export function Task({ task, onDeleteTask, onConcludeTask }: TaskProps) {
+
+  function handleDeleteTask() {
+    const { id } = task;
+
+    onDeleteTask(id);
+  }
+
+  function handleConcludeTask() {
+    const { id } = task;
+
+    onConcludeTask(id);
+  }
 
   return (
     <div className={styles.container}>
-      <input 
-        type="checkbox" 
-        checked={concluded} 
-        onChange={() => console.log('change')}
-      />
-      {
-        concluded 
-        ? 
-        <del>
-          Integer urna interdum massa libero 
-          auctor neque turpis turpis semper. 
-          Duis vel sed fames integer.
-        </del>
-        :
-        <span>
-          Integer urna interdum massa libero 
-          auctor neque turpis turpis semper. 
-          Duis vel sed fames integer.
-        </span>
-      }
+      <div>
+        <input 
+          type="checkbox" 
+          checked={task.concluded} 
+          onChange={handleConcludeTask}
+        />
+        {
+          task.concluded 
+          ? 
+          <del>
+            {
+              task.title
+            }
+          </del>
+          :
+          <span>
+            {
+              task.title
+            }
+          </span>
+        }
+      </div>
       
-      <button>
+      <button onClick={handleDeleteTask} title="Deletar tarefa">
         <Trash size={24} />
       </button>
     </div>

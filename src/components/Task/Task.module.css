@@ -1,6 +1,7 @@
 .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-top: 1rem;
   padding: 1.5rem;
   border-radius: 8px;
@@ -8,16 +9,16 @@
   gap: 2rem;
 
   background: var(--gray-500);
-  
 }
 
 .container input[type="checkbox"] {
-  width: 1.75rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 1rem;
 
   border-radius: 50%;
   vertical-align: middle;
-  border: 2px solid var(--blue);
+  border: 1px solid var(--blue);
   appearance: none;
   -webkit-appearance: none;
   outline: none;
@@ -27,7 +28,7 @@
 .container input[type="checkbox"]:checked {
   clip-path: circle(50% at 50% 50%);
   background-color: var(--purple-dark);
-  border: 2px solid var(--purple-dark);
+  border: 1px solid var(--purple-dark);
 }
 
 .container button {
@@ -39,7 +40,7 @@
   line-height: 0;
   border-radius: 2px;
 
-  transition: color 0.1s;
+  transition: color 0.2s;
 }
 
 .container button:hover {
