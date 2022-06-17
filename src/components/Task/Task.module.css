@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-400);
+  gap: 2rem;
+
+  background: var(--gray-500);
+  
+}
+
+.container input[type="checkbox"] {
+  width: 1.75rem;
+  height: 1.5rem;
+
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 2px solid var(--blue);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.container input[type="checkbox"]:checked {
+  clip-path: circle(50% at 50% 50%);
+  background-color: var(--purple-dark);
+  border: 2px solid var(--purple-dark);
+}
+
+.container button {
+  background: transparent;
+  border: none;
+  color: var(--gray-300);
+  cursor: pointer;
+
+  line-height: 0;
+  border-radius: 2px;
+
+  transition: color 0.1s;
+}
+
+.container button:hover {
+  color: var(--danger);
+}

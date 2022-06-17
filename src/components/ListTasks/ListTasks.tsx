@@ -1,4 +1,5 @@
 import { ClipboardText, PlusCircle } from 'phosphor-react';
+import { Task } from '../Task/Task';
 import styles from './ListTasks.module.css';
 
 export function ListTasks() {
@@ -18,11 +19,14 @@ export function ListTasks() {
           <strong className={styles.totalTasksConcluded}>Concluídas <span>0 de 0</span></strong>
         </header>
 
-        <div className={styles.listNotFound}>
+        <Task concluded={true}/>
+        <Task concluded={false}/>
+
+        {/* <div className={styles.listNotFound}>
           <ClipboardText size={60} />
           <strong>Você ainda não tem tarefas cadastradas</strong>
           <p>Crie tarefas e organize seus itens a fazer</p>
-        </div>
+        </div> */}
       </div>
     </div>
   )
